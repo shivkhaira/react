@@ -8,7 +8,8 @@ const Directory=()=>{
         title: 'hats',
         imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
         id: 1,
-        linkUrl: 'shop/hats'
+        linkUrl: 'shop/hats',
+        
       },
       {
         title: 'jackets',
@@ -29,7 +30,8 @@ const Directory=()=>{
         id: 4,
         linkUrl: 'shop/womens',
         // eslint-disable-next-line
-        size:'large'
+        size:'large',
+       
       },
       {
         title: 'mens',
@@ -38,7 +40,8 @@ const Directory=()=>{
         id: 5,
         linkUrl: 'shop/mens',
         // eslint-disable-next-line
-        size:'large'
+        size:'large',
+       
       }
 
    ])
@@ -46,8 +49,8 @@ const Directory=()=>{
   
       return(
         <div className="directory-menu">
-        {section.map(section=>(
-            <MenuItem key={section.id} title={section.title} image={section.imageUrl} size={section.size} />
+        {section.map(({id,...sectionprops})=>(
+            <MenuItem key={id} {...sectionprops}  />
         ))}
         </div>    
       )
